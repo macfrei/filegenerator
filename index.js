@@ -1,10 +1,5 @@
-const fs = require('fs')
+const writeFile = require('./writeFile')
 
 const functionName = process.argv[2] ?? 'myFunction'
 
-fs.writeFileSync(
-  `./${functionName}.js`,
-  `function ${functionName}() {
-  
-}`
-)
+writeFile(functionName)
