@@ -6,7 +6,14 @@ const rl = readline.createInterface({
   output: process.stdout,
 })
 
-rl.question('Hello, how are you?', answer => {
-  console.log(answer)
-  rl.close()
-})
+rl.question(
+  'Which functions and files would you like to create? Plase seperate by comma.',
+  answer => {
+    // 'answer' is a string with comma seperated words
+    // for each word we want to execute writeFile
+    //writeFile(answer)
+
+    console.log(answer)
+    rl.close()
+  }
+)
