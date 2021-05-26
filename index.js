@@ -59,13 +59,8 @@ const questions = [
 ]
 
 inquirer.prompt(questions).then(answers => {
-  // answers = { name: 'Header', fileTypes: ['component', 'spec']}
-
-  // iterate over fileTypes array from answer
   answers.fileTypes.forEach(fileType => {
-    // get value (our template function) from each fileType
     const templateFunction = templates[fileType]
-    // call function and save string
     const fileString = templateFunction(answers.name)
     writeFile(answers.name, fileType, fileString)
   })
