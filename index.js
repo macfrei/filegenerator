@@ -4,7 +4,7 @@ const inquirer = require('inquirer')
 const questions = [
   {
     type: 'input',
-    name: 'file',
+    name: 'name',
     message:
       'Which functions and files would you like to create? Plase seperate by comma.',
   },
@@ -12,7 +12,7 @@ const questions = [
     type: 'checkbox',
     message: 'Plase select a file type',
     name: 'fileTypes',
-    choices: [{ name: 'Component' }, { name: 'Spec' }, { name: 'Stories' }],
+    choices: [{ name: 'component' }, { name: 'spec' }, { name: 'stories' }],
     validate(answer) {
       if (answer.length < 1) {
         return 'You must choose at least one file type.'
@@ -23,7 +23,7 @@ const questions = [
 ]
 
 inquirer.prompt(questions).then(answers => {
-  const files = answers['file'].split(',').map(el => el.trim())
-  files.forEach(file => writeFile(file))
+  const names = answers['name'].split(',').map(el => el.trim())
+  names.forEach(name => writeFile(name))
   console.log(answers)
 })
