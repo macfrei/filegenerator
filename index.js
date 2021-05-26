@@ -11,7 +11,6 @@ const questions = [
 ]
 
 inquirer.prompt(questions).then(answers => {
-  // answers is an object: { file: 'header, footer' }
   const files = answers['file'].split(',').map(el => el.trim())
   files.forEach(file => writeFile(file))
   console.log(files)
