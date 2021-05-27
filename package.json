@@ -5,12 +5,15 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
+    "build": "pkg -t macos -o bin/filegenerator index.js",
+    "copy": "sudo cp bin/filegenerator /usr/local/bin/filegenerator",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Lene Frei",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^8.1.0"
+    "inquirer": "^8.1.0",
+    "pkg": "^5.2.1"
   }
 }
