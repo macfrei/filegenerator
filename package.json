@@ -5,6 +5,8 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
+    "build": "pkg -t macos -o bin/filegenerator index.js",
+    "copy": "cp -f bin/filegenerator /usr/local/bin/filegenerator",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
